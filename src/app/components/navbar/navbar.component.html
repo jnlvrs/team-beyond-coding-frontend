@@ -1,7 +1,20 @@
-
-<header> 
-  <span class="group-ride-text">Group Ride</span>
-  <ng-container  class="button-container">
-  <button *ngFor="let item of menuItems" [routerLink]="item.route" class="button">{{item.label}}</button>
-  </ng-container>
-</header>
+<div class="navbar">
+  <div class="logo">
+    Group Ride
+  </div>
+  <div class="link-search">
+    <div class="nav-links" >
+      <ul>
+        <li class="links" *ngFor="let link of navList">
+          <a class="a-tags" href={{link.link}}>{{link.name}} </a>
+        </li>
+      </ul>
+    </div>
+    <div class="search-bar">
+      <form class="example" action="action_page.php">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><fa-icon [icon]="faSearch"></fa-icon></button>
+      </form>
+    </div>
+  </div>
+</div>
