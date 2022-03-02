@@ -12,7 +12,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 })
 export class NavbarComponent implements OnInit {
   faSearch = faSearch;
-  navList=[
+  navList = [
     {
       name: 'Home',
       link: 'http://localhost:4200/',
@@ -36,10 +36,21 @@ export class NavbarComponent implements OnInit {
     {
       name: 'Gallery',
       link: 'http://www.google.com',
-    }
+    },
   ];
+
+  
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  menuToggle() { 
+    const toggle = document.getElementById('toggle');
+    const linkSearch = document.getElementById('link-search');
+    const header = document.getElementById('header');
+
+    toggle.classList.toggle('active');
+    linkSearch.classList.toggle('active');
+  }
 }

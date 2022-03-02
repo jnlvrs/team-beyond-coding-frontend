@@ -2,33 +2,102 @@
 
 
 .navbar {
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: #2b2d42;
     color: white;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 5;
 }
 
-.link-search {
-    display: flex;
-    justify-content: end;
+.logo {
+    font-family: 'Rock Salt', cursive;
+    transform: rotate(356deg);
+    line-height: 50px;
+    padding-left: 15px;
+    color: #ffb703;
+    font-size: 1em;
+}
+
+#toggle {
+    position:absolute;
+    top: 0;
+    right: 0 ;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    display: flex ;
+    justify-content: center;
     align-items: center;
 }
 
-.links {
+#toggle:before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    background: black;
+    transform: translateY(-5px);
+    transition: 0.2s;
+}
+
+#toggle:after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    background: black;
+    transform: translateY(5px);
+    transition: 0.2s;
+}
+
+#toggle.active:before {
+    transform: translateY(0) rotate(45deg)
+}
+#toggle.active:after {
+    transform: translateY(0) rotate(-45deg)
+}
+#toggle.active {
+    background-color: #ffb703;
+}
+
+#link-search {
+    position:relative;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 50px;
+    right: 50px;
+    transition: .3s;
+    width: 0;
+    overflow: hidden;
+}
+#link-search.active { 
+    width: 600px;
+}
+
+#link-search ul {
+    position:relative;
     display: flex;
     flex-direction: row;
+}
+.links {
     list-style-type: none;
-    float: left;
 }
 
 .a-tags {
     text-decoration: none;
     color:white;
-    padding: 1rem;
-    display: block;
+    padding: 12px;
+    display: inline-block;
 }
 
-.links:hover {
-    background-color: #555;
+.a-tags:hover {
+    padding-bottom: 4px;
+    color: #ffb703;
+    border-bottom:1px solid #ffb703;
 }
