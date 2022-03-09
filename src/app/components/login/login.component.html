@@ -2,16 +2,21 @@
 <div class="background">
     <div class="row">
         <div class="card">
+            <h3>Welcome</h3>
             <div class="header">
                 <h1>Login Here!</h1>
             </div>
-            <form class="form-container" (ngSubmit)="userLogin()">   
-                <input  type="email" class="form-label" id="insertEmail" placeholder="Enter Email" [(ngModel)]="loginUser.email" [ngModelOptions]="{standalone: true}">
-                <input type="password" class="form-label" id="inputPassword" placeholder="Enter Password" [(ngModel)]="loginUser.password" [ngModelOptions]="{standalone: true}">
-                <button type="button" routerLink="" id="cancel" class="button">Close</button>
-                <button type="submit"  class="button">Login</button>
+            <form class="form-container"> 
+                <input type="email" class="form-input" id="insertEmail" placeholder="Enter Email" [(ngModel)]="loginUser.email" [ngModelOptions]="{standalone: true}">
+                <input type="password" class="form-input" id="inputPassword" placeholder="Enter Password" [(ngModel)]="loginUser.password" [ngModelOptions]="{standalone: true}">
             </form>
-            <a href="http://localhost:4200/signup">Not Registered Yet? Sign Up Here!</a>
+            <div class="buttons">
+                <button type="button" routerLink="home" id="cancel" class="btn">Close</button>
+                <button type="submit"  class="btn" (ngSubmit)="userLogin()">Login</button>
+            </div>
+            <div class="register">
+                <a href="http://localhost:4200/signup">Not Registered Yet? Sign Up Here!</a>
+            </div>
         </div>
     </div>
 </div>
